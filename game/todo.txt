@@ -1,0 +1,34 @@
+//Create basic ball in environment  
+//create dataset of images and asscoiated center locations 
+//Add bb code 
+//add noise to detections 
+// Make the ball move in a circle
+// Make a trail track thingy majig 
+//Run base yolo model on sample real data 
+Create custom python script that utilizes yolo inference 
+
+Make realistic ball flight 
+train yolo detector off dataset 
+Plot yolo detections on game screen 
+create kalman filter tracking prediction 
+Plot smoothed tracking track thingy 
+
+run simulation and plot detections 
+
+
+
+FUTURE POSSIBLE GOALS 
+use multiple balls and focus on the moving ball!!!!! 
+-- apply optical flow to aid with filtering detections? 
+-- add a batter object to predict strike zones 
+-- create realistic pitch and test detector performance on the pitch 			
+LONG TERM GOALS 
+-- multistage/multitask network that feeds yolo detections of batter to action recognition network 
+-- detect hits etc 
+
+
+
+RELATION TO BIG STICK SOFTWARE 
+-- need to track path of pitched ball (for correcting in windy conditions) 
+-- need to find result position of pitch (for adjusting pitch position) 
+-- 
