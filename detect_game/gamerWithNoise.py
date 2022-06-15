@@ -11,7 +11,11 @@ import pygame
 import io 
 import numpy as np
 import math
- 
+import cv2
+import matplotlib.pyplot as plt
+
+
+
 def move_coords(angle, radius, coords):
     theta = math.radians(angle)
     return coords[0] + radius * math.cos(theta), coords[1] + radius * math.sin(theta)
@@ -36,8 +40,6 @@ bsz = 75.0
 boxSizeScaled = bsz/sz
 boxSzStr = f'{boxSizeScaled:.6f}'
 ##### TODO need to adjust box sizes to the full circle size 
-
-
 
 cnt = 0 
 
@@ -75,6 +77,14 @@ while running:
     if l > 0 and r > 0 and l < 500 and r < 500 and t > 0 and b > 0 and t < 500 and b < 500: 
         xs = f'{x/sz:.6f}'
         ys = f'{y/sz:.6f}'
+
+        x3 = pygame.surfarray.pixels3d(screen)
+        x3 = x3[:,:,::-1]
+        image_data = x3 / 255.
+        image_data = x3[np.newaxis, ...].astype(np.float32)
+        cv2.imshow('image',x3)
+        cv2.waitKey(0)
+
         # pygame.image.save(screen,"images/"+flnm+".jpg")
         # writeData("annotations/"+flnm+".txt", xs, ys,boxSzStr,boxSzStr)    
         cnt+=1 

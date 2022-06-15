@@ -1,0 +1,12 @@
+
+
+python train.py --img 640 --batch 16 --epochs 3 --data ballData.yaml --weights yolov5s.pt
+
+
+
+
+python export.py --weights /home/brett/Desktop/yolov5/runs/train/exp7/weights/best.pt --include tflite 
+
+
+
+python detect.py --weights /home/brett/Desktop/yolov5/runs/train/exp8/weights/best.pt --source ../sim_sample.jpg
